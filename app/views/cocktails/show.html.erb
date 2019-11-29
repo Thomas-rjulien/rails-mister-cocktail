@@ -1,7 +1,8 @@
 <h1 class="text-center">Cocktail name: <%= @cocktail.name %></h1>
 <i class="btn btn-info btn-lg btn-block"><%= link_to "Back to Cocktail list", cocktails_path %></i>
+<%= cl_image_tag("k-u-lwoTuByIuC4-unsplash_bemt1h", width: 600, height: 500, crop: :fill) %>
 <h2>Recipe:</h2>
-<% @doses.each do |new_dose| %>
+<% @cocktail.doses.each do |new_dose| %>
 <ul>
   <li>
     <p><%= new_dose.description %>: <%= new_dose.ingredient.name %></p>
@@ -10,4 +11,4 @@
 </ul>
 <% end %>
 <h1>Create dose:</h1>
-<%= render 'cocktails/form_doses', dose: @dose %>
+<%= render 'doses/new', cocktail: @cocktail, dose: @dose %>

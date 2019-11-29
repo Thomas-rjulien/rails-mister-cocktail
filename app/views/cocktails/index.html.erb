@@ -1,14 +1,22 @@
-<h1 class="text-center">Cocktails list:</h1>
-<p class="btn btn-info btn-lg btn-block"><%= link_to "Create a cocktail", new_cocktail_path %></p>
-<div class="row">
-<% @cocktails.each do |cocktail| %>
-  <div class="col-4 card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><%= cocktail.name %></h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <i class="btn btn-primary"><%= link_to "Find out more!", cocktail_path(cocktail) %></i>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dlo5xbrsn/image/upload/v1575043367/sergio-alves-santos-PeDrafNlY2Y-unsplash_ajqswy.jpg);">
+  <div class="container">
+    <h1>This app <strong>allows you</strong> to <strong>access cocktail recipes from around the world</strong>!</h1>
+    <p>Start getting inspired now!</p>
+    <i class="btn-gradient"><%= link_to "Create a cocktail", new_cocktail_path %></i>
   </div>
 </div>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-4">
+      <div class="card-trip">
+        <%= cl_image_tag("k-u-lwoTuByIuC4-unsplash_bemt1h", width: 400, height: 300, crop: :thumb) %>
+        <div class="card-trip-infos">
+          <h2><%= cocktail.name %></h2>
+          <i class="btn-gradient"><%= link_to "Find out more!", cocktail_path(cocktail) %></i>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
