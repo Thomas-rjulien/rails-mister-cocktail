@@ -1,2 +1,10 @@
-<h1>Cocktails#new</h1>
-<%= render 'form', cocktail: @cocktail %>
+<div class="container">
+  <div class="image-to-fit" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dlo5xbrsn/image/upload/v1575043367/sergio-alves-santos-PeDrafNlY2Y-unsplash_ajqswy.jpg)">>
+    <h1 class="mb-3 text-center text-white">Creating a cocktail</h1>
+    <i class="text-white"><%= render 'form', cocktail: @cocktail %></i>
+    <div class="mt-4">
+      <i class="btn-gradient"><%= link_to "Back to Cocktail list", cocktails_path %></i>
+    </div>
+
+  </div>
+</div>

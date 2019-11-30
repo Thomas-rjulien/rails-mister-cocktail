@@ -1,6 +1,5 @@
-<h1 class="text-center">Cocktail name: <%= @cocktail.name %></h1>
-<i class="btn btn-info btn-lg btn-block"><%= link_to "Back to Cocktail list", cocktails_path %></i>
-<%= cl_image_tag("k-u-lwoTuByIuC4-unsplash_bemt1h", width: 600, height: 500, crop: :fill) %>
+<h1 class="text-center mb-3">Cocktail name: <%= @cocktail.name %></h1>
+<%= cl_image_tag(@cocktail.photo, width: 600, height: 500, crop: :fill) %>
 <h2>Recipe:</h2>
 <% @cocktail.doses.each do |new_dose| %>
 <ul>
@@ -10,5 +9,6 @@
   </li>
 </ul>
 <% end %>
-<h1>Create dose:</h1>
+<h2>Create dose:</h2>
 <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
+<i class="btn-gradient"><%= link_to "Back to Cocktail list", cocktails_path %></i>
